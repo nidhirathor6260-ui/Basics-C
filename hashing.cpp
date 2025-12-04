@@ -15,5 +15,6 @@ int main() {
     int num;
     cin >> num;
     cout << hash[num]<< "\n";
+
+
 }
-// This code counts the occurrences of numbers in an array and retrieves the count for a specific number.
