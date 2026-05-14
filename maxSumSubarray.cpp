@@ -7,10 +7,14 @@
 using namespace std;
 
 
+
+
 int maxSumArray(vector<int> nums ){
     int n = nums.size();
     int sum = 0;
     int maxsum = INT_MIN;
+
+    // also a kadane algorithm implementation
     for(int value : nums){
          sum+=value;
          maxsum = max(sum,maxsum);
@@ -18,6 +22,7 @@ int maxSumArray(vector<int> nums ){
     }
     return maxsum;
 }
+
 
 int main() {
    
@@ -29,7 +34,7 @@ int main() {
         cin >> num;
         v.push_back(num);
     }
-    cout << "Maximum sum subArray: "<<maxSumArray(v);
+    cout << "Maximum sum subArray: "<< maxSumArray(v);
     
     
     
