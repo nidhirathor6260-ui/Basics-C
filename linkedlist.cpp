@@ -45,6 +45,24 @@ class List{
             }
         }
 
+        void insertAt(int val, int k){
+            Node* newNode = new Node(val);
+            if(head == NULL){
+                head = newNode;
+                return;
+            }if( k == 0){
+                push_front(val);
+                return;
+            }
+            Node* temp = head;
+            for(int i = 1 ; i<k ; i++){
+                temp = temp->next;
+            }
+            newNode->next = temp->next;
+            temp->next = newNode;
+            
+        }
+
         void pop_front(){
             if(head == NULL){
                 cout << "Linkedlist is already empty";
@@ -71,6 +89,23 @@ class List{
            delete tail;
            tail = temp;      
         }
+
+        Node* removeDuplicates(Node* head) {
+        if(head == NULL || head->next == NULL){
+            return head;
+        }
+        Node* temp = head;
+        while(temp!=NULL && temp->next !=NULL){
+            if(temp->data == temp->next->data){
+                Node* duplicate = temp->next;
+                temp->next = temp->next->next;
+                delete duplicate;
+            }else{
+                temp = temp->next;
+            }
+        }
+        return head;
+    }
         
         void printll(){
             Node* temp = head;
@@ -101,6 +136,9 @@ int main(){
     ll.printll();
     ll.pop_front();
     
+    ll.printll();
+
+    ll.insertAt(4,1);
     ll.printll();
 
  return 0;
