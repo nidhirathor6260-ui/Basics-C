@@ -1,0 +1,2 @@
+g++ filename.cpp -o filename
+.\hashing.exe
